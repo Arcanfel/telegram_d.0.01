@@ -7,7 +7,7 @@ var VKClient    = require("../lib/VKClient");
 var restler     = require("restler");
 var http        = require("http");
 var mongoose    = require("mongoose");
-var Q           = require("Q");
+var Q           = require("q");
 var os          = require("os");
 
 var ChatSchema = mongoose.Schema({
