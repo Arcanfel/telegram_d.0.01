@@ -362,6 +362,11 @@ TelegramBot.prototype.onStatusCheck = function onStatusCheck(req, res, next) {
 
 TelegramBot.prototype.onNewMemas = function onNewMemas(error, memchiki) {
 	
+	if (error) {
+		logError(error);
+		return;
+	}
+	
 	if (memchiki.length !== 1) {
 		return;
 	}
