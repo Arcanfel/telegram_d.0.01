@@ -294,7 +294,23 @@ TelegramBot.prototype.processUpdate = function processUpdate(update) {
 		}
 		
 		if (message.text.indexOf("/ip") === 0) {
-			self.sendMessage(chat, JSON.stringify(os.networkInterfaces()));
+			var networkInterfaces = os.networkInterfaces();
+			var message = [];
+			for (var key in networkInterfaces) {
+				if (networkInterfaces.hasOwnProperty(key)) {
+					var networkInterface = networkInterfaces[key];
+					
+					for (var idx = 0; idx < networkInterface.length; idx++) {
+						var subInterface = networkInterface[idx];
+
+						if (subInterface.family === "IPv4" && subInterface.address !== "127.0.0.1") {
+							message.push(subInterface.address);
+						}					
+					}
+				}
+			}
+			
+			self.sendMessage(chat, message.join(" | "));
 		}
 	}
 };
