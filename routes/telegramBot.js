@@ -8,6 +8,7 @@ var restler     = require("restler");
 var http        = require("http");
 var mongoose    = require("mongoose");
 var Q           = require("Q");
+var os          = require("os");
 
 var ChatSchema = mongoose.Schema({
 	chatId: { type: Number, unique: true },
@@ -290,6 +291,10 @@ TelegramBot.prototype.processUpdate = function processUpdate(update) {
 				self.sendMessage(chat, " No. Not yet.");
 			});
 			
+		}
+		
+		if (message.text.indexOf("/ip") === 0) {
+			self.sendMessage(chat, JSON.stringify(os.networkInterfaces()));
 		}
 	}
 };
