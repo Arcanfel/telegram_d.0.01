@@ -1,0 +1,22 @@
+{
+	"name": "hello-friend",
+	"version": "0.0.1",
+	"description": "x_0",
+	"main": "index.js",
+	"dependencies": {
+		"express": "^4.13.3",
+		"jade": "^1.11.0",
+		"restler": "^3.4.0",
+		"mongoose": "^4.1.10",
+		"q": "^1.4.1"
+	},
+	"devDependencies": {
+		"react-tools": "^0.13.3"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "./node_modules/react-tools/bin/jsx -x jsx public/javascripts/src/ public/javascripts/ & node app.js"
+	},
+	"author": "",
+	"license": "ISC"
+}
