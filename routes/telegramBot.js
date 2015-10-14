@@ -283,13 +283,15 @@ TelegramBot.prototype.processUpdate = function processUpdate(update) {
 		}
 		
 		if (message.text.indexOf("/zaglohni") === 0) {
-			Chat.remove({ chatId: chat["id"] }, function (error) {
-				if (error) {
-					console.log(error);
-					return;
-				}
-				self.sendMessage(chat, " No. Not yet.");
-			});
+			self.sendMessage(chat, " Азаза");
+			
+			// Chat.remove({ chatId: chat["id"] }, function (error) {
+			// 	if (error) {
+			// 		console.log(error);
+			// 		return;
+			// 	}
+			// 	self.sendMessage(chat, " No. Not yet.");
+			// });
 			
 		}
 		
